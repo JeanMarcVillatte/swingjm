@@ -3,6 +3,8 @@ package io.robusta.fora.swing;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
 
 public class SwingApp {
 
@@ -36,8 +38,14 @@ public class SwingApp {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 847, 285);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		CommentView commentView = new CommentView();
+		GridBagLayout gridBagLayout = (GridBagLayout) commentView.getLayout();
+		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0};
+		gridBagLayout.rowHeights = new int[]{28, 183, 17};
+		frame.getContentPane().add(commentView, BorderLayout.CENTER);
 	}
 
 }
