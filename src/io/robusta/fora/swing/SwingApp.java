@@ -47,7 +47,11 @@ public class SwingApp {
 		gridBagLayout.rowHeights = new int[]{28, 183, 17};
 		frame.getContentPane().add(commentView, BorderLayout.CENTER);
 		
+<<<<<<< HEAD
 		System.out.println("chg master");
+=======
+		System.out.println("test branche bdd");
+>>>>>>> bdd
 	}
 
 }
