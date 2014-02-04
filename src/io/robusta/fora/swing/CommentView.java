@@ -14,6 +14,8 @@ import javax.swing.JTextArea;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+import io.robusta.fora.domain.Comment;
+import javax.swing.JTextPane;
 
 public class CommentView extends JPanel {
 
@@ -21,7 +23,8 @@ public class CommentView extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	private final Comment model = new Comment();
+	
 	/**
 	 * Create the panel.
 	 */
@@ -34,14 +37,14 @@ public class CommentView extends JPanel {
 		gridBagLayout.rowWeights = new double[]{1.0, 1.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
-		JTextArea textArea = new JTextArea();
-		GridBagConstraints gbc_textArea = new GridBagConstraints();
-		gbc_textArea.gridwidth = 9;
-		gbc_textArea.insets = new Insets(0, 0, 5, 5);
-		gbc_textArea.fill = GridBagConstraints.BOTH;
-		gbc_textArea.gridx = 1;
-		gbc_textArea.gridy = 1;
-		add(textArea, gbc_textArea);
+		JTextPane textPane = new JTextPane();
+		GridBagConstraints gbc_textPane = new GridBagConstraints();
+		gbc_textPane.gridwidth = 9;
+		gbc_textPane.insets = new Insets(0, 0, 5, 5);
+		gbc_textPane.fill = GridBagConstraints.BOTH;
+		gbc_textPane.gridx = 1;
+		gbc_textPane.gridy = 1;
+		add(textPane, gbc_textPane);
 		
 		JPanel panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
