@@ -4,17 +4,27 @@ import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.SoftBevelBorder;
+
 import java.awt.GridBagLayout;
+
 import javax.swing.JLabel;
+
 import java.awt.GridBagConstraints;
+
 import javax.swing.ImageIcon;
+
 import java.awt.Insets;
+
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
+
 import javax.swing.SwingConstants;
+
 import io.robusta.fora.domain.Comment;
+
 import javax.swing.JTextPane;
 
 public class CommentView extends JPanel {
@@ -90,6 +100,7 @@ public class CommentView extends JPanel {
 		gbc_lblNewLabel_3.gridy = 1;
 		add(lblNewLabel_3, gbc_lblNewLabel_3);
 
+		System.out.println("test branche bdd");
 	}
 
 }

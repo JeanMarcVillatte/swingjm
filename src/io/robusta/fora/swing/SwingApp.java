@@ -46,6 +46,8 @@ public class SwingApp {
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0};
 		gridBagLayout.rowHeights = new int[]{28, 183, 17};
 		frame.getContentPane().add(commentView, BorderLayout.CENTER);
+		
+		System.out.println("test branche bdd");
 	}
 
 }
