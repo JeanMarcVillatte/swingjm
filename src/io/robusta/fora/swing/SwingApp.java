@@ -1,10 +1,12 @@
 package io.robusta.fora.swing;
 
+import io.robusta.fora.ForaDataSource;
+import io.robusta.fora.domain.Subject;
+
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
 
 public class SwingApp {
 
@@ -34,24 +36,23 @@ public class SwingApp {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame .
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 847, 285);
+		frame.setBounds(100, 100, 700, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		CommentView commentView = new CommentView();
-		GridBagLayout gridBagLayout = (GridBagLayout) commentView.getLayout();
-		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0};
-		gridBagLayout.rowHeights = new int[]{28, 183, 17};
-		frame.getContentPane().add(commentView, BorderLayout.CENTER);
+
+
+		Subject model = ForaDataSource.getInstance().getSubjects().get(0);
+		SubjectView subjectView = new SubjectView(model);
+
+		SubjectController controller = new SubjectController(model, subjectView);
+
+		subjectView.setController(controller);
 		
-<<<<<<< HEAD
-		System.out.println("chg master");
-=======
-		System.out.println("test branche bdd");
->>>>>>> bdd
+		frame.getContentPane().add(subjectView, BorderLayout.CENTER);
 	}
 
 }
